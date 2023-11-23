@@ -12,18 +12,15 @@ export const ListItem = styled.li`
 `;
 export const ListItemText = styled.p`
   width: 120px;
-  font-size: 13px;
+  font-size: 14px;
   color: rgb(72, 76, 122);
-  font-weight: bold;
   text-align: left;
 `;
 export const ListItemLink = styled.a`
-  display: inline-block;
   width: 170px;
-  font-size: 13px;
+  font-size: 14px;
   color: rgb(72, 76, 122);
   text-decoration: none;
-  font-weight: bold;
   text-align: left;
 `;
 
