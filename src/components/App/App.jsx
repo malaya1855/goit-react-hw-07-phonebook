@@ -5,9 +5,12 @@ import {
   InfoTable,
   PhoneBookForm,
   Title,
-  ItemForm,
+  NewContactForm,
+  Subtitle,
+  ContactListForm,
 } from 'components';
 import { useSelector } from 'react-redux';
+import 'primeicons/primeicons.css';
 
 const App = () => {
   const allContacts = useSelector(state => state.contacts);
@@ -16,12 +19,12 @@ const App = () => {
     <PhoneBookForm>
       <Title>My Phonebook</Title>
       <InfoTable>
-        <ItemForm>
-          <h2>Add new contact</h2>
+        <NewContactForm>
+          <Subtitle>Add new contact</Subtitle>
           <ContactForm />
-        </ItemForm>
-        <ItemForm>
-          <h2>My contacts</h2>
+        </NewContactForm>
+        <ContactListForm>
+          <Subtitle>My contacts</Subtitle>
           {allContacts.length === 0 ? (
             <p>No saved contacts</p>
           ) : (
@@ -30,7 +33,7 @@ const App = () => {
               <ContactList />
             </div>
           )}
-        </ItemForm>
+        </ContactListForm>
       </InfoTable>
     </PhoneBookForm>
   );

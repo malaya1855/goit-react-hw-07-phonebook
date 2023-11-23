@@ -1,4 +1,4 @@
-import { Form, Input, ButtonForm } from 'components';
+import { Form, Input, ButtonForm, BtnNewName } from 'components';
 import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/slice/contactsSlice';
@@ -59,7 +59,9 @@ export const ContactForm = () => {
           required
         />
       </label>
-      <ButtonForm type="submit">Add contact</ButtonForm>
+      <ButtonForm type="submit">
+        <BtnNewName className="pi pi-user-plus"></BtnNewName>
+      </ButtonForm>
     </Form>
   );
 };

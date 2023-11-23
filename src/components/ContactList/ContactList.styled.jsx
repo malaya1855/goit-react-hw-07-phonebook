@@ -1,22 +1,42 @@
 import styled from '@emotion/styled';
-export const List = styled.li`
+export const List = styled.ul`
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 0px;
+`;
+export const ListItem = styled.li`
+  display: flex;
   align-items: center;
   justify-content: space-between;
 `;
+export const ListItemText = styled.p`
+  width: 120px;
+  font-size: 13px;
+  color: rgb(72, 76, 122);
+  font-weight: bold;
+  text-align: left;
+`;
+export const ListItemLink = styled.a`
+  display: inline-block;
+  width: 170px;
+  font-size: 13px;
+  color: rgb(72, 76, 122);
+  text-decoration: none;
+  font-weight: bold;
+  text-align: left;
+`;
 
 export const ButtonDelete = styled.button`
-  display: inline-block;
   outline: 0;
   border: 0;
   cursor: pointer;
   font-weight: 600;
   color: rgb(72, 76, 122);
-  font-size: 14px;
-  height: 38px;
-  padding: 8px 24px;
-  border-radius: 50px;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 50%;
+  width: 40px;
   background-image: linear-gradient(180deg, #fff, #f5f5fa);
   box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%),
     0 1px 3px 0 rgb(93 100 148 / 20%);
@@ -25,4 +45,9 @@ export const ButtonDelete = styled.button`
     box-shadow: 0 8px 22px 0 rgb(37 44 97 / 15%),
       0 4px 6px 0 rgb(93 100 148 / 20%);
   }
+`;
+
+export const BtnName = styled.i`
+  font-size: 16px;
+  color: rgb(72, 76, 122);
 `;

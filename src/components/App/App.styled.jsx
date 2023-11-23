@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 export const PhoneBookForm = styled.div`
-  width: 600px;
+  width: 700px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
@@ -10,7 +10,7 @@ export const PhoneBookForm = styled.div`
 `;
 export const InfoTable = styled.div`
   display: flex;
-  gap: 30px;
+  gap: 20px;
   align-items: start;
   justify-content: space-between;
 `;
@@ -18,9 +18,17 @@ export const InfoTable = styled.div`
 export const Title = styled.h1`
   text-align: center;
   margin: 0;
+  color: rgb(72, 76, 122);
 `;
 
-export const ItemForm = styled.div`
-  // width: 265px;
+export const Subtitle = styled.h2`
+  color: rgb(72, 76, 122);
+`;
+
+export const NewContactForm = styled.div`
   text-align: center;
+`;
+export const ContactListForm = styled.div`
+  text-align: center;
+  width: 500px;
 `;

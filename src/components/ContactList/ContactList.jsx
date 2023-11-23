@@ -1,7 +1,14 @@
-// import PropTypes from 'prop-types';
-import { ButtonDelete, List } from 'components';
+import {
+  ButtonDelete,
+  ListItem,
+  List,
+  ListItemText,
+  ListItemLink,
+  BtnName,
+} from 'components';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from 'redux/slice/contactsSlice';
+// import 'primeicons/primeicons.css';
 
 export const ContactList = () => {
   const allContacts = useSelector(state => state.contacts);
@@ -17,17 +24,19 @@ export const ContactList = () => {
   return filteredContacts.length === 0 ? (
     <p>No matched contacts in your phone book</p>
   ) : (
-    <ul>
+    <List>
       {filteredContacts.map(contact => {
         const nameArray = contact.name.split(' ');
         const nameFirstUpperLetter = nameArray
           .map(word => word.replace(word[0], word[0].toUpperCase()))
           .join(' ');
         return (
-          <List key={contact.id}>
-            <p>{nameFirstUpperLetter}</p>
-            <p>{contact.number}</p>
-            <a href={`mailto:${contact.email}`}>{contact.email}</a>
+          <ListItem key={contact.id}>
+            <ListItemText>{nameFirstUpperLetter}</ListItemText>
+            <ListItemText>{contact.number}</ListItemText>
+            <ListItemLink href={`mailto:${contact.email}`}>
+              {contact.email}
+            </ListItemLink>
 
             <ButtonDelete
               type="ButtonDelete"
@@ -40,11 +49,11 @@ export const ContactList = () => {
                 }
               }}
             >
-              Delete
+              <BtnName className="pi pi-trash"></BtnName>
             </ButtonDelete>
-          </List>
+          </ListItem>
         );
       })}
-    </ul>
+    </List>
   );
 };
