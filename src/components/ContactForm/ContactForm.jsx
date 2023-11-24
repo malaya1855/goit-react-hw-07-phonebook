@@ -1,20 +1,21 @@
 import { Form, Input, ButtonForm, BtnNewName } from 'components';
-import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/slice/contactsSlice';
+import { addContact } from 'redux/operations';
 import { InputMask } from 'primereact/inputmask';
+import { selectContacts } from 'redux/selectors';
 
 export const ContactForm = () => {
-  const allContacts = useSelector(state => state.contacts);
+  const allContacts = useSelector(selectContacts);
 
   const dispatch = useDispatch();
   const onSubmitForm = ev => {
     ev.preventDefault();
-    const name = ev.currentTarget.elements.name.value.trim();
-    const number = ev.currentTarget.elements.number.value;
-    const email = ev.currentTarget.elements.email.value;
+    const currentElement = ev.currentTarget.elements;
+    const name = currentElement.name.value.trim();
+    const number = currentElement.number.value;
+    const email = currentElement.email.value;
 
-    const newContact = { id: nanoid(5), name, number, email };
+    const newContact = { name, number, email };
 
     ev.target.reset();
     const existedContact = allContacts.find(

@@ -6,16 +6,20 @@ import {
   ListItemLink,
   BtnName,
 } from 'components';
+import { useEffect } from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact } from 'redux/slice/contactsSlice';
-// import 'primeicons/primeicons.css';
+import { deleteContact, fetchContacts } from 'redux/operations';
+import { selectFilter, selectContacts } from 'redux/selectors';
 
 export const ContactList = () => {
-  const allContacts = useSelector(state => state.contacts);
-  const filterName = useSelector(state => state.filter);
+  const allContacts = useSelector(selectContacts);
+  const filterName = useSelector(selectFilter);
 
   const dispatch = useDispatch();
-
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
   const normalizedFilter = filterName.toLowerCase();
   const filteredContacts = allContacts.filter(contact =>
     contact.name.toLowerCase().includes(normalizedFilter)

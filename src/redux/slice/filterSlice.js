@@ -7,10 +7,7 @@ export const filetrSlice = createSlice({
   initialState,
   reducers: {
     newFilterName:(state, action) => (state = action.payload)
-    // addContact: (state, action) => {state.push(action.payload)
-    // },
-    // deleteContact: (state, action) => { return state.filter(el => el.id !== action.payload)
-    // },
+
   },
 })
 

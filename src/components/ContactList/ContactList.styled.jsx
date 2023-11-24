@@ -44,7 +44,7 @@ export const ButtonDelete = styled.button`
   }
 `;
 
-export const BtnName = styled.i`
+export const BtnName = styled.span`
   font-size: 16px;
   color: rgb(72, 76, 122);
 `;

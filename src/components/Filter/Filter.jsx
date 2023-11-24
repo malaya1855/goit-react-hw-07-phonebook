@@ -1,10 +1,10 @@
-// import PropTypes from 'prop-types';
 import { InputFilter } from 'components';
 import { useDispatch, useSelector } from 'react-redux';
 import { newFilterName } from 'redux/slice/filterSlice';
+import { selectFilter } from 'redux/selectors';
 
 export const Filter = () => {
-  const filterName = useSelector(state => state.filter);
+  const filterName = useSelector(selectFilter);
   const dispatch = useDispatch();
 
   const onChangeFilter = ev => {

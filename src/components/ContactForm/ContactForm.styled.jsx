@@ -51,7 +51,7 @@ export const ButtonForm = styled.button`
       0 4px 6px 0 rgb(93 100 148 / 20%);
   }
 `;
-export const BtnNewName = styled.i`
+export const BtnNewName = styled.span`
   font-size: 16px;
   color: rgb(72, 76, 122);
 `;
