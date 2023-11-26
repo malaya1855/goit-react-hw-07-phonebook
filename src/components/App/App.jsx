@@ -35,7 +35,7 @@ const App = () => {
         </NewContactForm>
         <ContactListForm>
           <Subtitle>My contacts</Subtitle>
-          {isLoading && <Loader></Loader>}
+          {isLoading && <Loader />}
           {error && <p>{error.message}</p>}
           {allContacts.length === 0 ? (
             <p>No saved contacts</p>

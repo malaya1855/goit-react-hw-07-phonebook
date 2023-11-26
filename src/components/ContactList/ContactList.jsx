@@ -17,13 +17,20 @@ export const ContactList = () => {
   const filterName = useSelector(selectFilter);
 
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+
   const normalizedFilter = filterName.toLowerCase();
   const filteredContacts = allContacts.filter(contact =>
     contact.name.toLowerCase().includes(normalizedFilter)
   );
+  const handleDeleteContact = async contactId => {
+    if (window.confirm('Are you sure you want to delete the contact?')) {
+      await dispatch(deleteContact(contactId));
+      dispatch(fetchContacts());
+    }
+  };
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch, filterName]);
 
   return filteredContacts.length === 0 ? (
     <p>No matched contacts in your phone book</p>
@@ -45,13 +52,7 @@ export const ContactList = () => {
             <ButtonDelete
               type="ButtonDelete"
               id={contact.id}
-              onClick={() => {
-                if (
-                  window.confirm('Are you sure you want to delete the contact?')
-                ) {
-                  dispatch(deleteContact(contact.id));
-                }
-              }}
+              onClick={() => handleDeleteContact(contact.id)}
             >
               <BtnName className="pi pi-trash"></BtnName>
             </ButtonDelete>
