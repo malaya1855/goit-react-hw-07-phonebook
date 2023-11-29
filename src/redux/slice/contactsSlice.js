@@ -17,8 +17,7 @@ export const contactsSlice = createSlice({
     .addCase(
       fetchContacts.fulfilled,(state, action) => {state.isLoading = false;
         state.error = null;
-        state.items = action.payload;},
-    )
+        state.items = action.payload})
     .addCase(
       addContact.fulfilled,(state, action) =>{state.isLoading = false;
         state.error = null;

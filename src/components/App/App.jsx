@@ -33,8 +33,10 @@ const App = () => {
           <Subtitle>Add new contact</Subtitle>
           <ContactForm />
         </NewContactForm>
+
         <ContactListForm>
           <Subtitle>My contacts</Subtitle>
+
           {isLoading && <Loader />}
           {error && <p>{error.message}</p>}
           {allContacts.length === 0 ? (
