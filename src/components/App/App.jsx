@@ -40,7 +40,7 @@ const App = () => {
           {isLoading && <Loader />}
           {error && <p>{error.message}</p>}
           {allContacts.length === 0 ? (
-            <p>No saved contacts</p>
+            !isLoading && <p>No saved contacts</p>
           ) : (
             <div>
               <Filter />
